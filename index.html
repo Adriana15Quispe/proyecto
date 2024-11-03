@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Monitoreo y Control para Restaurantes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: Arial, sans-serif;
+            background-image: url('fondo.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            padding: 5px 10px;
+            z-index: 2;
+        }
+
+        header img.logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .navbar a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffd500;
+        }
+
+        .content {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-top: 10px;
+        }
+
+        .project-title {
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            z-index: 2;
+            margin-top: 10px;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .hidden {
+            display: none; /* Ocultar el título */
+        }
+
+        footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer a {
+            color: #ffd000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icono del menú hamburguesa */
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Responsividad para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .navbar {
+                display: none; /* Ocultar menú por defecto */
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9); /* Fondo negro sólido */
+                z-index: 1; /* Asegurarse de que esté por encima del contenido */
+            }
+
+            .navbar a {
+                padding: 15px;
+                font-size: 1em;
+                border-bottom: 1px solid #333;
+            }
+
+            .menu-icon {
+                display: block; /* Mostrar menú hamburguesa */
+            }
+        }
+
+        /* Responsividad para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            header img.logo {
+                height: 30px;
+                margin: 5px 0;
+            }
+
+            .project-title {
+                font-size: 1.5em;
+            }
+
+            footer {
+                padding: 10px 0;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="WhatsApp Image 2024-11-03 at 1.37.54 PM.jpeg" alt="Logo" class="logo">
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span> <!-- Icono de menú -->
+    <div class="navbar" id="navbar">
+        <a href="#inicio">Inicio</a>
+        <a href="#ae">AE</a>
+        <a href="#oo">OO</a>
+        <a href="#mt">MT</a>
+        <a href="#vi">VI</a>
+    </div>
+</header>
+
+<div class="content">
+    <div class="project-title" id="projectTitle">
+        Sistema de Monitoreo y Control para Restaurantes
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sistema de Monitoreo y Control para Restaurantes. Todos los derechos reservados.</p>
+    <p>Desarrollado por <a href="#">X</a> | <a href="#contacto">Contáctanos</a></p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        const projectTitle = document.getElementById('projectTitle');
+        if (navbar.style.display === 'flex') {
+            navbar.style.display = 'none';
+            projectTitle.classList.remove('hidden'); // Mostrar el título
+        } else {
+            navbar.style.display = 'flex';
+            projectTitle.classList.add('hidden'); // Ocultar el título
+        }
+    }
+</script>
+
+</body>
+</html>
